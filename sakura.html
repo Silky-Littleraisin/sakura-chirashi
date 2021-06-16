@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ 
+   
+
+
+        <div class="row">
+            <h4 style="padding-top: 1%" class="col s12" id="title_ajax">検証するレビューを入力してください</h4>
+            <form class="form-signin"   role="form">
+                <input  name="keyword" class="form-control" placeholder="review" required autofocus>
+    
+    
+                <button class="btn btn-lg btn-primary btn-block" type="button" id="ajax_search">Search_ajax </button>
+            </form>
+        </div>
+    <div id="demo">           <p></p>    </div>
+
+
+<script>
+$(document).ready(function(){
+//   $("button").click(function(){
+    // document.getElementById("demo").innerHTML += "ajjjj";
+    $('#ajax_search').click(function() {
+
+    $.ajax({
+        url: 'https://sijhdhvsq4.execute-api.us-east-2.amazonaws.com/0032',
+        type: 'POST',
+        crossDomain: true,
+        data: 
+        JSON.stringify({
+            review: $('input').val()
+        }),
+        headers: {
+            "X-Api-Key": 'blablabla'
+        },
+        dataType: 'json',
+        contentType: "application/json",
+        success: function (data) {
+            document.getElementById("demo").innerHTML = '　';
+                document.getElementById("demo").innerHTML += '<p>';
+            document.getElementById("demo").innerHTML += 'サクラ度は以下通り<br>';
+            document.getElementById("demo").innerHTML += '判定:';
+            document.getElementById("demo").innerHTML += data['Sentiment'];
+            document.getElementById("demo").innerHTML += '</p><p>';
+            // document.getElementById("demo").innerHTML += 'Positive';
+            document.getElementById("demo").innerHTML += 'Positive:';
+            document.getElementById("demo").innerHTML += data['SentimentScore']['Positive'];
+            document.getElementById("demo").innerHTML += '</p><p>';
+                document.getElementById("demo").innerHTML += 'Negative:';
+                document.getElementById("demo").innerHTML += data['SentimentScore']['Negative'];
+            document.getElementById("demo").innerHTML += '</p><p>';
+                document.getElementById("demo").innerHTML += 'Neutral:';
+                document.getElementById("demo").innerHTML += data['SentimentScore']['Neutral'];
+            document.getElementById("demo").innerHTML += '</p><p>';
+                document.getElementById("demo").innerHTML += 'Mixed:';
+                document.getElementById("demo").innerHTML += data['SentimentScore']['Mixed'];
+            document.getElementById("demo").innerHTML += '</p><p>';
+
+                document.getElementById("demo").innerHTML += 'review:';
+                document.getElementById("demo").innerHTML += data['review'];
+        document.getElementById("demo").innerHTML += '</p>';
+
+        }
+    })
+    ;
+  });
+});
+    </script>
+</body>
+</html>
