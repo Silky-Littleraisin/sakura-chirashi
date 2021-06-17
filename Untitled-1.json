@@ -1,7 +1,7 @@
 {
     "body": "eyJ0ZXN0IjoiYm9keSJ9",
     "resource": "/{proxy+}",
-    "path": "https://ydcqbs0z9c.execute-api.us-east-2.amazonaws.com",
+    "path": "httponaws.com",
     "httpMethod": "POST",
     "isBase64Encoded": true,
     "queryStringParameters": {
@@ -13,7 +13,7 @@
       ]
     },
     "pathParameters": {
-      "proxy": "https://ydcqbs0z9c.execute-api.us-east-2.amazonaws.com"
+      "proxy": "httpus-east-2.amazonaws.com"
     },
     "stageVariables": {
       "baz": "qux"
@@ -29,7 +29,7 @@
       "CloudFront-Is-SmartTV-Viewer": "false",
       "CloudFront-Is-Tablet-Viewer": "false",
       "CloudFront-Viewer-Country": "US",
-      "Host": "1234567890.execute-api.us-east-2.amazonaws.com",
+      "Host": "1234567om",
       "Upgrade-Insecure-Requests": "1",
       "User-Agent": "Custom User Agent String",
       "Via": "1.1 08f323deadbeefa7af34d5feb414ce27.cloudfront.net (CloudFront)",
@@ -70,7 +70,7 @@
         "US"
       ],
       "Host": [
-        "0123456789.execute-api.us-east-2.amazonaws.com"
+        "0123456789.execute-2.amazonaws.com"
       ],
       "Upgrade-Insecure-Requests": [
         "1"
@@ -114,7 +114,7 @@
         "userAgent": "Custom User Agent String",
         "user": null
       },
-      "path": "https://ydcqbs0z9c.execute-api.us-east-2.amazonaws.com",
+      "path": "https://ydcqbs0cute-api.us-east-2.amazonaws.com",
       "resourcePath": "/{proxy+}",
       "httpMethod": "POST",
       "apiId": "1234567890",
