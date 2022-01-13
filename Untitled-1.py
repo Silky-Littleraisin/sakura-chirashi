@@ -1,35 +1,77 @@
-
-import json
-import urllib.parse
-import boto3
-
-
-
-print('Loading function')
-
-s3 = boto3.client('s3')
-comprehend = boto3.client('comprehend')
+from abc import abstractclassmethod
+import re
+from base64 import b64decode as bd
+import urllib.request, urllib.parse, importlib, socket, random, base64, json, time, sys, os
+import ast
+import chardet
 
 
-def lambda_handler(event, context):
-    # print("Received event: " + json.dumps(event, indent=2))
-    # print("event")
-    # return(event)
-    # print(event['queryStringParameters']['review'])
+def OOOOO(s):
+    return base64.b64encode(s.encode(encoding='utf-8'))
+def OOOO0(b):
+    return base64.b64encode(b)
+def OOO0O(b):
+    return base64.b64decode(b).decode(encoding='utf_32')
+def OOO01(b):
+    return base64.b64decode(base64.b64decode(b).decode(encoding='utf_32'))
+def OOO00(b):
+    return base64.b64decode(b)
 
+
+a =[]
+# with open("ce3.py") as obj:
+  #   a = obj.readlines()
+# htre=re.compile("(.*)[\(,\,](.*?\(b'.+?'\))(.*)")
+htre=re.compile("(.*)eval\((b'[a-zA-Z]+?.+?')\)(.*)")
+for n,b in enumerate(a):
+    #continue
+    h1 = htre.match(b)
+    if h1!=None:
+        pass
+        print("#############################")
     
-    text = event['review']
-    # return {'a':'bbb'}
-    # Get the object from the event and show its content type
-    # bucket = event['Records'][0]['s3']['bucket']['name']
-    # key = urllib.parse.unquote_plus(event['Records'][0]['s3']['object']['key'], encoding='utf-8')
-    try:
-        response = comprehend.detect_sentiment(Text=text, LanguageCode='ja')
-        # response['queryStringParameters'] = event['queryStringParameters']
-        response['review'] = event['review']
+        # print(h1.group(2))
+      #   print('"'+h1.group(2)+'"')
+      #   print( bytes([ord(char) for char in h1.group(2)[2:-1]]))
+        print(type(bytes([ord(char) for char in h1.group(2)[2:-1]])))
+        print(chardet.detect(bytes([ord(char) for char in h1.group(2)[2:-1]][20:])))
+        print(chardet.detect(base64.b64decode(bytes([ord(char) for char in h1.group(2)[2:-1]][20:]))))
+        print(chardet.detect(base64.b64decode(bytes([ord(char) for char in h1.group(2)[2:-1]]))))
+
+       #  print(OOO01(bytes([ord(char) for char in h1.group(2)[2:-1]])))
+        # print(OOOO0(h1.group(2)))
+      #   print(OOOOO(h1.group(2)))
+      #   asss=OOOOO(h1.group(2))
+      #   break
         
-        # print("CONTENT TYPE: " + response['ContentType'])
-        print(response.keys())
-        return response
-    except Exception as e:
-        print(e)
+        # if type(eval(h1.group(2))) is bytes:
+        #     print(eval(h1.group(2)).decode('utf-8'))
+        # else:
+        #     print(eval(h1.group(2)))
+
+        # if type(eval(h1.group(2))) is bytes:
+        #     a[n]=b.replace(h1.group(2),eval(h1.group(2)).decode('utf-8'))
+        # else:
+       #  a[n]=b.replace(h1.group(2),OOO0O(bytes([ord(char) for char in h1.group(2)[2:-1]])))
+
+        # print(a[n])
+
+
+        # print("#############################")
+
+assss=b"aHR0cHM6Ly93d3cuY2diM2QuY29tLw=="
+
+
+print(os.path.basename(os.path.dirname(__file__)))
+print(type(assss))
+
+# print(OOO0O(assss))
+print(OOO00(assss))
+print(OOOO0(assss))
+print(OOOOO(assss))
+
+
+with open("ce4.py","w") as obj:
+    
+    obj.writelines(a)
+
